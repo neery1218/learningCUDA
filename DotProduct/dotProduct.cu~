@@ -1,5 +1,6 @@
 #define THREADS_PER_BLOCK 3
 #define TOTAL_BLOCKS 1
+//make sure numbers above  match the matlab script
 
 __device__ int blockSums [TOTAL_BLOCKS]; 
 __constant__ int VECTOR_SIZE; 

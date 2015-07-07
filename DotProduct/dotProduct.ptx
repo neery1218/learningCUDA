@@ -4,7 +4,7 @@
 	// nvopencc 4.1 built on 2014-05-08
 
 	//-----------------------------------------------------------
-	// Compiling /tmp/tmpxft_00003b28_00000000-9_dotProduct.cpp3.i (/tmp/ccBI#.dE4zOp)
+	// Compiling /tmp/tmpxft_00003b6c_00000000-9_dotProduct.cpp3.i (/tmp/ccBI#.kTyeOh)
 	//-----------------------------------------------------------
 
 	//-----------------------------------------------------------
@@ -17,7 +17,7 @@
 	//-----------------------------------------------------------
 
 	.file	1	"<command-line>"
-	.file	2	"/tmp/tmpxft_00003b28_00000000-8_dotProduct.cudafe2.gpu"
+	.file	2	"/tmp/tmpxft_00003b6c_00000000-8_dotProduct.cudafe2.gpu"
 	.file	3	"/usr/lib/gcc/x86_64-linux-gnu/4.6/include/stddef.h"
 	.file	4	"/usr/local/cuda-6.0/bin/../targets/x86_64-linux/include/crt/device_runtime.h"
 	.file	5	"/usr/local/cuda-6.0/bin/../targets/x86_64-linux/include/host_defines.h"
@@ -61,15 +61,15 @@
 	.reg .u32 %r<19>;
 	.reg .u64 %rd<16>;
 	.reg .pred %p<7>;
-	.shared .align 4 .b8 __cuda___cuda_local_var_15221_34_non_const_multiplicationStorage24[12];
-	.loc	14	7	0
+	.shared .align 4 .b8 __cuda___cuda_local_var_15222_34_non_const_multiplicationStorage24[12];
+	.loc	14	8	0
 $LDWbegin__Z11dot_productPiS_S_:
 	cvt.u32.u16 	%r1, %tid.x;
 	ld.const.s32 	%r2, [VECTOR_SIZE];
 	setp.le.u32 	%p1, %r2, %r1;
 	@%p1 bra 	$Lt_0_4610;
-	.loc	14	12	0
-	mov.u64 	%rd1, __cuda___cuda_local_var_15221_34_non_const_multiplicationStorage24;
+	.loc	14	13	0
+	mov.u64 	%rd1, __cuda___cuda_local_var_15222_34_non_const_multiplicationStorage24;
 	cvt.u64.u32 	%rd2, %r1;
 	mul.wide.u32 	%rd3, %r1, 4;
 	ld.param.u64 	%rd4, [__cudaparm__Z11dot_productPiS_S__a];
@@ -82,8 +82,8 @@ $LDWbegin__Z11dot_productPiS_S_:
 	add.u64 	%rd8, %rd3, %rd1;
 	st.shared.s32 	[%rd8+0], %r5;
 $Lt_0_4610:
-	mov.u64 	%rd1, __cuda___cuda_local_var_15221_34_non_const_multiplicationStorage24;
-	.loc	14	14	0
+	mov.u64 	%rd1, __cuda___cuda_local_var_15222_34_non_const_multiplicationStorage24;
+	.loc	14	15	0
 	bar.sync 	0;
 	mov.u32 	%r6, 0;
 	setp.ne.u32 	%p2, %r1, %r6;
@@ -97,8 +97,8 @@ $Lt_0_4610:
 	mov.s32 	%r10, 0;
 	mov.s32 	%r11, %r8;
 $Lt_0_6146:
- //<loop> Loop body line 14, nesting depth: 1, estimated iterations: unknown
-	.loc	14	20	0
+ //<loop> Loop body line 15, nesting depth: 1, estimated iterations: unknown
+	.loc	14	21	0
 	ld.shared.s32 	%r12, [%rd9+0];
 	add.s32 	%r10, %r12, %r10;
 	add.s32 	%r9, %r9, 1;
@@ -109,17 +109,19 @@ $Lt_0_6146:
 $Lt_0_7170:
 	mov.s32 	%r10, 0;
 $Lt_0_5634:
-	.loc	14	22	0
+	.loc	14	23	0
 	cvt.u32.u16 	%r13, %ctaid.x;
 	mov.u64 	%rd10, blockSums;
 	cvt.u64.u32 	%rd11, %r13;
 	mul.wide.u32 	%rd12, %r13, 4;
 	add.u64 	%rd13, %rd10, %rd12;
 	st.global.s32 	[%rd13+0], %r10;
+	.loc	14	24	0
+	bar.sync 	0;
 	mov.u32 	%r14, 0;
 	setp.ne.u32 	%p5, %r13, %r14;
 	@%p5 bra 	$Lt_0_6658;
-	.loc	14	25	0
+	.loc	14	27	0
 	ld.param.u64 	%rd14, [__cudaparm__Z11dot_productPiS_S__c];
 	ld.global.s32 	%r15, [%rd14+0];
 	ld.global.s32 	%r16, [blockSums+0];
@@ -127,7 +129,7 @@ $Lt_0_5634:
 	st.global.s32 	[%rd14+0], %r17;
 $Lt_0_6658:
 $Lt_0_5122:
-	.loc	14	30	0
+	.loc	14	32	0
 	exit;
 $LDWend__Z11dot_productPiS_S_:
 	} // _Z11dot_productPiS_S_
