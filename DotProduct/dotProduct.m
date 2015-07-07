@@ -11,7 +11,9 @@ k.ThreadBlockSize = [3 1 1];
 
 dotProduct = 0; 
 
-[a,b,result] = feval(k,a,b,dotProduct);
+setConstantMemory(k,'VECTOR_SIZE',int32(k.ThreadBlockSize(1))); 
+
+[~,~,result] = feval(k,a,b,dotProduct);
 c = gather(result); 
 
 
