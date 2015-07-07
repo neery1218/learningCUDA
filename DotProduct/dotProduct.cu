@@ -22,6 +22,7 @@ __global__ void dot_product (int* a, int*b, int*c)
 	}
 	blockSums[blockIdx.x]=tempSum; 
 	__syncthreads(); 
+
 	if (blockIdx.x==0)
 	   for (int i = 0; i < TOTAL_BLOCKS; i++)	
 		*c+=blockSums[i]; 
