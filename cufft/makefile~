@@ -1,0 +1,2 @@
+testingcufft.cu: 
+	nvcc testingcufft.cu -lcufft
